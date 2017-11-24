@@ -1,0 +1,26 @@
+#-------------------------------------------------
+#
+# Project created by QtCreator 2017-11-04T17:51:31
+#
+#-------------------------------------------------
+
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = ComputationalMethods
+TEMPLATE = app
+
+
+SOURCES += main.cpp\
+        mainwindow.cpp \
+    matrixinputview.cpp \
+    mainwindowview.cpp \
+    control.cpp
+
+HEADERS  += mainwindow.h \
+    matrixinputview.h \
+    mainwindowview.h \
+    control.h
+
+FORMS    += mainwindow.ui
