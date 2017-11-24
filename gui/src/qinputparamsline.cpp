@@ -4,6 +4,7 @@ QInputParamsLine::QInputParamsLine(QWidget *parent) : QWidget(parent), _paramsNa
     _paramsEnterField(new QLineEdit()), _plane(new QHBoxLayout)
 {
     _paramsEnterField->setMinimumHeight(15);
+    _paramsEnterField->setStyleSheet("background-color:white");
     _plane->addWidget(_paramsName.get());
     _plane->addWidget(_paramsEnterField.get());
      this->setLayout(_plane.get());

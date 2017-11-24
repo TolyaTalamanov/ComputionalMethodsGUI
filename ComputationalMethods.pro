@@ -25,6 +25,7 @@ SOURCES += sample/main.cpp\
      lib/src/upperrelaxationmethod.cpp \
      gui/src/qanswerform.cpp \
      gui/src/qinputparamsline.cpp \
+    gui/include/qinputsizeline.cpp
 
 
 
@@ -42,7 +43,8 @@ HEADERS  += gui/include/mainwindow.h \
     lib/src/simpleiterationmethod.h \
     upperrelaxationmethod.h \
     gui/include/qanswerform.h \
-    gui/include/qinputparamsline.h
+    gui/include/qinputparamsline.h \
+    gui/include/qinputsizeline.h
 
 FORMS += forms/mainwindow.ui
 

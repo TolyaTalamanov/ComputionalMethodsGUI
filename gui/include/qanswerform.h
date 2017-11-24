@@ -12,6 +12,9 @@ class QAnswerForm : public QWidget
     Q_OBJECT
 public:
     explicit QAnswerForm(QWidget *parent = 0);
+
+
+
     void setAnswer( const vector<double>& answer ){
 
         size = answer.size();
@@ -22,6 +25,7 @@ public:
         QFont font =  text->font();
         font.setPixelSize(30);
         text->setFont(font);
+
         text->setText("Решение системы");
         vals = new QLabel*[answer.size()];
         for(int i = 0 ; i < answer.size(); i++){
@@ -29,8 +33,11 @@ public:
             QFont font =  vals[i]->font();
             font.setPixelSize(24);
             vals[i]->setFont(font);
+
             vals[i]->setText("X" + QString::number(i) + " = " + QString::number(answer[i]));
             valsLayout->addWidget(vals[i]);
+            textLayout->setAlignment(Qt::AlignCenter);
+            valsLayout->setAlignment(Qt::AlignLeft);
         }
 
         textLayout->addWidget(text);

@@ -14,8 +14,13 @@ QMatrixInputView::QMatrixInputView(int size, QWidget *parent) :
 
      QString operation;
      for(int i = 0 ; i < _size; i++){
+
          _freeValLineEdit[i] = new QLineEdit;
          _freeValLineEdit[i]->setFixedSize(50, 20);
+         _freeValLineEdit[i]->setStyleSheet("background-color:white");
+
+
+
          _hLayout[i] = new QHBoxLayout;
          for(int j = 0 ; j < _size; j++){
              _qLabels  [i * _size + j] = new QLabel;
@@ -24,6 +29,8 @@ QMatrixInputView::QMatrixInputView(int size, QWidget *parent) :
 
              _lineEdits[i * _size + j] = new QLineEdit;
              _lineEdits[i * _size + j]->setFixedSize(50, 20);
+             _lineEdits[i * _size + j]->setStyleSheet("background-color:white");
+
 
              _hLayout[i]->addWidget(_lineEdits[i * _size + j]);
              _hLayout[i]->addWidget(_qLabels  [i * _size + j]);
@@ -32,7 +39,7 @@ QMatrixInputView::QMatrixInputView(int size, QWidget *parent) :
          _vLayout->addLayout(_hLayout[i]);
      }
      _mainLayout->addLayout(_vLayout);
-    // _mainLayout->addLayout(_vLayoutFreeVal);
+
      setLayout(_mainLayout);
 
 }

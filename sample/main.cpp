@@ -14,11 +14,14 @@
 #include "gui/include/control.h"
 #include <memory>
 #include "lib/include/icomputionalmethods.h"
+#include "gui/include/qinputparamsline.h"
 
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     unique_ptr<MainWindowView> mw(new MainWindowView);
+
+
     mw->show();
     return app.exec();
 }

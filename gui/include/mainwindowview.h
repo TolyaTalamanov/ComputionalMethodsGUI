@@ -14,6 +14,7 @@
 #include "qanswerform.h"
 #include <QMessageBox>
 #include <gui/include/qinputparamsline.h>
+#include <gui/include/qinputsizeline.h>
 
 using namespace std;
 
@@ -25,6 +26,7 @@ public:
     ~MainWindowView(){
         delete _answerForm;
     }
+
 
 public slots:
     void incSize(){
@@ -70,6 +72,15 @@ public slots:
                 m[i].emplace_back(_matrixInputView->_lineEdits[i * size + j ]->text().toDouble());
             }
         }
+    }
+    void setSize(){
+        int nextIndex = _inputSizeLine->_sizesBox->currentIndex() + 2;
+        int dSize = nextIndex - _inputSizeLine->_currentIndex;
+        setFixedSize(size().width() + dSize * 96, size().height() + dSize * 26);
+        _matrixInputView.reset(new QMatrixInputView(nextIndex));
+        _size = nextIndex;
+        _hBoxLayouts[1]->addWidget(_matrixInputView.get());
+        _inputSizeLine->_currentIndex = nextIndex;
     }
 
     void compute(){
@@ -149,10 +160,11 @@ private:
     shared_ptr<QComboBox>                _comboBox;
     shared_ptr<QInputParamsLine>         _omega;
     shared_ptr<QInputParamsLine>         _epsilon;
+    shared_ptr<QInputSizeLine>           _inputSizeLine;
     QStringList                          _stringList;
     QAnswerForm*                         _answerForm;
     std::unique_ptr<IComputionalMethod>  _method;
-    QVBoxLayout*                         _vBoxLayout[3];
+    QVBoxLayout*                         _vBoxLayout[4];
     QHBoxLayout*                         _hBoxLayouts[4];
     int                                  _size = 3;
     Control*                             _contol;

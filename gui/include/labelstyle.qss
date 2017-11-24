@@ -1,0 +1,21 @@
+QLabel{
+    background-color: transparent;
+    color: white;
+    /*border: 2px solid rgba(255, 255, 255, 100);*/
+    /*border-radius: 32px;*/
+    /*border-color: white*/
+}
+QLabel:hover{
+    background-color: transparent;
+    color: red;
+    /*border: 2px solid rgba(255, 255, 255, 100);*/
+    /*border-radius: 32px;*/
+    /*border-color: white*/
+}
+QLabel:pressed{
+    background-color: transparent;
+    color: white;
+    /*border: 2px solid rgba(255, 255, 255, 100);*/
+    /*border-radius: 32px;*/
+    /*border-color: white*/
+}
