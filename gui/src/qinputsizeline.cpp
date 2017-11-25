@@ -1,4 +1,4 @@
-#include "qinputsizeline.h"
+#include "gui/include/qinputsizeline.h"
 
 QInputSizeLine::QInputSizeLine(QWidget *parent) : QWidget(parent),
     _enterSizeLabel(new QLabel),_sizesBox(new QComboBox), _layout(new QHBoxLayout),

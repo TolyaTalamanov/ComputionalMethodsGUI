@@ -25,12 +25,7 @@ SOURCES += sample/main.cpp\
      lib/src/upperrelaxationmethod.cpp \
      gui/src/qanswerform.cpp \
      gui/src/qinputparamsline.cpp \
-    gui/include/qinputsizeline.cpp
-
-
-
-
-
+     gui/src/qinputsizeline.cpp
 
 HEADERS  += gui/include/mainwindow.h \
     gui/include/matrixinputview.h \
