@@ -16,6 +16,8 @@ private:
     Matrix multiplicationMatrix(const Matrix &matrix);
     std::vector<double> multiplicationMatVec(const Matrix &matrix,  const std::vector<double> &b);
 private:
+    virtual bool stopIter(vector<double> a, vector<double>b);
+private:
     double epsilon;
 };
 

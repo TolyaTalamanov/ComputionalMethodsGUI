@@ -10,9 +10,7 @@ public:
                                 const std::vector<double> &b) override;
 
 private:
-   int getMaxRow(const Matrix& matrix, int col);
-    double determinant(const Matrix &matrix);
-    Matrix createSpecialMatrix(const Matrix &matrix, const std::vector<double> &b, int pos);
+    int     getMaxRow( const Matrix& matrix, int col);
 };
 
 #endif //COMPUTATIONALMETHODS_KRAMERMETHOD_H

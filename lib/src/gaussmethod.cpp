@@ -3,8 +3,15 @@
 #include <iostream>
 #include "lib/src/gaussmethod.h"
 #include <iostream>
+#include <QString>
 std::vector<double> GaussMethod::compute(const Matrix &matrix,
                                          const std::vector<double>& b) {
+
+    double det = determinant(matrix);
+    if (det == 0){
+        throw QString("Определитель матрицы равен нулю!");
+
+    }
     Matrix A = matrix;
     std::vector<double> B = b;
     int swapRow;

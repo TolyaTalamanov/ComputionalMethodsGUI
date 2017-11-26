@@ -12,6 +12,7 @@ class QInputParamsLine : public QWidget
 {
     Q_OBJECT
 public:
+    friend class MainWindowView;
     explicit QInputParamsLine(QWidget *parent = 0);
 
     void setParamsName(const QString& name){

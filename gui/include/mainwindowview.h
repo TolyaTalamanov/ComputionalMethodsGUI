@@ -131,6 +131,7 @@ public slots:
         if(_comboBox->currentText() == "Метод Зейделя"){
             auto method = IComputionalMethod::create(Implementation::SEIDEL);
             method->setEpsilon(_epsilon->getParams());
+            //_epsilon->_paramsEnterField->setText(QString::number(0.001));
             try{
                 answer = method->compute(m, b);
             }
@@ -143,6 +144,8 @@ public slots:
             auto method = IComputionalMethod::create(Implementation::UPPER_RELAXATION);
             method->setEpsilon(_epsilon->getParams());
             method->setOmega(_omega->getParams());
+//            _epsilon->_paramsEnterField->setText(QString::number(0.001));
+//            _omega->_paramsEnterField->setText(QString::number(1.5));
             try{
                 answer = method->compute(m, b);
             }
@@ -154,6 +157,7 @@ public slots:
         if(_comboBox->currentText() == "Метод простых итераций"){
             auto method = IComputionalMethod::create(Implementation::SIMPLE_ITERATION);
             method->setEpsilon(_epsilon->getParams());
+            //_epsilon->_paramsEnterField->setText(QString::number(0.001));
             try{
                 answer = method->compute(m, b);
             }

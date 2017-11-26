@@ -61,6 +61,7 @@ MainWindowView::MainWindowView(QWidget *parent) : QWidget(parent),
     _omega->setParamsName(QString("Омега     = "));
     _epsilon->setParamsName(QString("Точность = "));
 
+
     _vBoxLayout[2]->addWidget(_omega.get());
     _vBoxLayout[2]->addWidget(_epsilon.get());
     _vBoxLayout[0]->addLayout(_vBoxLayout[2]);
