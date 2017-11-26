@@ -45,7 +45,12 @@ public slots:
         }
     }
     void fillRandom(){
-        std::uniform_int_distribution<int> d(0, 50);
+        if(_comboBox->currentIndex() == 3){
+            fillRandomForSimpleIteration();
+            return;
+        }
+
+        std::uniform_int_distribution<int> d(0, 30);
         std::mt19937 g{std::random_device()()};
         for(int i = 0; i < _size;i++){
             int f_val = d(g);
@@ -56,6 +61,21 @@ public slots:
           }
         }
     }
+    void fillRandomForSimpleIteration(){
+        std::uniform_int_distribution<int> d(0, 30);
+        std::uniform_int_distribution<int> dmax(31, 50);
+
+        std::mt19937 g{std::random_device()()};
+        for(int i = 0; i < _size;i++){
+            int f_val = d(g);
+            _matrixInputView->_freeValLineEdit[i]->setText(QString::number(f_val));
+            for(int j = 0; j < _size; j++){
+            int val = i == j ? dmax(g) : d(g);
+            _matrixInputView->_lineEdits[i * _size + j]->setText(QString::number(val));
+          }
+        }
+    }
+
     void clear(){
         for(int i = 0; i < _size;i++){
             _matrixInputView->_freeValLineEdit[i]->clear();
